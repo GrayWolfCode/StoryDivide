@@ -17,7 +17,7 @@ def divide_text():
     print(data)
     datas = data['fullstory']
     divided_text = datas + \
-        f"Divide this story into {data['number']} substories. Do not include the title of each substory, also do not include any label or header that indicate the order of the substory. Only the substory should be a completed paragraph. The response should be a JSON string that stands for one key-value pair; the key is 'scene', the value is an array containing the substories."
+        f"Divide this story into {data['number']} substories. Each substory should generate thirty to forty of words and include main character' s name. Do not include the title of each substory, also do not include any label or header that indicate the order of the substory. Only the substory should be a completed paragraph. The response should be a JSON string that stands for one key-value pair; the key is 'scene', the value is an array containing the substories."
     try:
         openai.api_key = OPENAI_API_KEY
         response = openai.ChatCompletion.create(
